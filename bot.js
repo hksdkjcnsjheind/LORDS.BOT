@@ -508,7 +508,6 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
           title: "``chat has bean cleard ``",
 
-          color: #fffff,
 
           footer: {
 
