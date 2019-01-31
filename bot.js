@@ -326,4 +326,4 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
     }
 
-}})    
+})    
