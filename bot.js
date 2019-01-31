@@ -193,7 +193,7 @@ client.on("message", message => {
   if (message.content === "&help") {
 
 message.author.send(`**
-------Bot-Commands------
+-------------Bot-Commands-------------
 
 &help لعرض هذه القائمة
 
@@ -209,28 +209,28 @@ message.author.send(`**
 
 &invite لدعوة البوت
 
-&قريبا
+&soon قريبا
 
-&قريبا
+&soon قريبا
 
-&قريبا
+&soon قريبا
 
-&قريبا
+&soon قريبا
 
------_LORDS BOT_-----
+-----------_LORDS BOT_--------------
 
-=====================
+=============================
 
 By LORD14GAMER
 
-=====================
+==============================
 
 LORD14GAMER جميع الحقوق محفوظة ل
 
-=====================
+==============================
 **`)
 
-      message.channel.send("تفقد الخاص")
+      message.channel.send("تفقد الخاص|✔")
 
   }
 
@@ -246,7 +246,7 @@ message.author.send(`**
 https://discordapp.com/oauth2/authorize?client_id=540107214703165440&permissions=8&scope=bot
 **`)
 
-      message.channel.send("تفقد الخاص")
+      message.channel.send("تفقد الخاص|✔")
 
   }
 
@@ -261,7 +261,7 @@ message.author.send(`**
 سيرفر الدعم الفني : https://discord.io/LORDSSERVER
 **`)
 
-      message.channel.send("تفقد الخاص")
+      message.channel.send("تفقد الخاص|✔")
 
   }
 
@@ -286,7 +286,6 @@ client.on("message", (message) => {
             let role2 = message.guild.roles.find("name", "@everyone");
 
             c.overwritePermissions(role, {
-
                 SEND_MESSAGES: true,
 
                 READ_MESSAGES: true
@@ -486,42 +485,5 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
     
     
-    client.on("message", message => {
-
-              var args = message.content.substring(prefix.length).split("&");
-
-              if (message.content.startsWith(prefix +"clear")) {
-
-                  if(!message.channel.guild) return message.reply('**:x: sorry but this Command for servers only **');         
-
-     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**?  you dont have perm to clear chat**');
-
-          var msg;
-
-          msg = parseInt();
-
-        
-
-        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-
-        message.channel.sendMessage("", {embed: {
-
-          title: "``chat has bean cleard ``",
 
 
-          footer: {
-
-            
-
-          }
-
-        }}).then(msg => {msg.delete(3000)});
-
-                            }
-
-  
-
-       
-
-  });
-    
