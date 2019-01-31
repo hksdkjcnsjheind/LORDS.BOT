@@ -7,10 +7,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === '&bot') {
-    msg.reply('hello
-    i created by LORD14GAMER
-    I am beta bot i will update my self every day
-    to add me contact LORD14GAMER');
+    msg.reply('hello i created by LORD14GAMER I am beta bot i will update my self every dayto add me contact LORD14GAMER');
   }
 });
 
