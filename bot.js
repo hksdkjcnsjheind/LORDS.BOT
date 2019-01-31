@@ -92,30 +92,30 @@ client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
       
-  if (message.content.startsWith('(prefix))ply')) {
+  if (message.content.startsWith('&ply')) {
     client.user.setGame(argresult);
       message.channel.send(`**✅   ${argresult}**`)
   } else 
      if (message.content === ("leave")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith('(prefix)wt')) {
+  if (message.content.startsWith('&wt')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith('mils')) {
+  if (message.content.startsWith('&ls')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith('(prefix)st')) {
+  if (message.content.startsWith('(&st')) {
     client.user.setGame(argresult, "https://www.twitch.tv/idk");
       message.channel.send(`**✅**`)
   }
-  if (message.content.startsWith('(prefix)setname')) {
+  if (message.content.startsWith('&setname')) {
   client.user.setUsername(argresult).then
       message.channel.send(`Changing The Name To ..**${argresult}** `)
 } else
-if (message.content.startsWith('(prefix)setavatar')) {
+if (message.content.startsWith('&setavatar')) {
   client.user.setAvatar(argresult);
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
@@ -185,41 +185,6 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 
 })
-
-
-client.on('message', message => {
-
-if(message.content.startsWith("&server")){
-
-  if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** ❎ `)
-
-if(!message.channel.guild) return message.reply(' ');
-
-const millis = new Date().getTime() - message.guild.createdAt.getTime();
-
-const now = new Date();
-
-dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-
-const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
-
-const days = millis / 1000 / 60 / 60 / 24;
-
-let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
-
-var embed  = new Discord.RichEmbed()
-
-.setAuthor(message.guild.name, message.guild.iconURL)
-
-.addField("**🆔 Server ID:**", message.guild.id,true)
-
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-
-.addField("**👥 Members**",`[${message.guild.memberCount}]`,true)
-
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
 
 
 
@@ -306,7 +271,7 @@ message.author.send(`**
  
 client.on("message", (message) => {
 
-   if (message.content.startsWith("lg!new")) {     
+   if (message.content.startsWith("&new")) {     
 
         const reason = message.content.split(" ").slice(1).join(" ");     
 
@@ -513,7 +478,7 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
         .setFooter(`From **${message.author.tag} (${message.author.id})**`)
 
-    client.channels.get("527457778684395521").send({embed:iiMo});
+    client.channels.get("540487899154743297").send({embed:iiMo});
 
     }
 
@@ -523,9 +488,9 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
     
     client.on("message", message => {
 
-              var args = message.content.substring(prefix.length).split("*");
+              var args = message.content.substring(prefix.length).split("&");
 
-              if (message.content.startsWith(prefix + "&clear")) {
+              if (message.content.startsWith(prefix +"clear")) {
 
                   if(!message.channel.guild) return message.reply('**:x: sorry but this Command for servers only **');         
 
@@ -543,7 +508,7 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
           title: "``chat has bean cleard ``",
 
-          color: 0x06DF00,
+          color: #fffff,
 
           footer: {
 
