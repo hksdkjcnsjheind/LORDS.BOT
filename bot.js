@@ -197,7 +197,7 @@ message.author.send(`**
 
 &help لعرض هذه القائمة
 
-&top لعرض قائمة المتفاعلين
+I &تقديم
 
 &bc ارسال رسالة إلى جميع الاعضاء
 
@@ -230,7 +230,7 @@ LORD14GAMER جميع الحقوق محفوظة ل
 ==============================
 **`)
 
-      message.channel.send("تفقد الخاص|✔")
+      message.channel.send("تفقد الخاص|💯")
 
   }
 
@@ -246,7 +246,7 @@ message.author.send(`**
 https://discordapp.com/oauth2/authorize?client_id=540107214703165440&permissions=8&scope=bot
 **`)
 
-      message.channel.send("تفقد الخاص|✔")
+      message.channel.send("تفقد الخاص|💯")
 
   }
 
@@ -261,7 +261,7 @@ message.author.send(`**
 سيرفر الدعم الفني : https://discord.io/LORDSSERVER
 **`)
 
-      message.channel.send("تفقد الخاص|✔")
+      message.channel.send("تفقد الخاص|💯")
 
   }
 
@@ -316,7 +316,7 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-ent.on("message", message => {
+client.on("message", message => {
 
     if(message.content.startsWith("&تقديم")) {
 
