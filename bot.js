@@ -124,7 +124,8 @@ client.on("guildMemberAdd", member => {
 
 👑اسم العضو  ${member}👑  
 
-انت العضو رقم ${member.guild.memberCount} `) 
+انت العضو رقم ${member.guild.memberCount} 
+اخي ممكن اتشرفنا بزيارة https://discord.io/LORDSSERVER`) 
 
 }).catch(console.error)
 
