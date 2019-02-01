@@ -116,21 +116,6 @@ client.on("message", msg => {
 });
 
 
-client.on("guildMemberAdd", member => {
-
-  member.createDM().then(function (channel) {
-
-  return channel.send(`🌹  ولكم نورت السيرفر🌹 
-
-👑اسم العضو  ${member}👑  
-
-انت العضو رقم ${member.guild.memberCount} 
-اخي ممكن اتشرفنا بزيارة https://discord.io/LORDSSERVER`) 
-
-}).catch(console.error)
-
-})
-
 
 
 client.on("message", message => {
