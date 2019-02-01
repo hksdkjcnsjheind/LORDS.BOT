@@ -174,7 +174,7 @@ client.on("message", message => {
 message.author.send(`**تحت التطوير
 **`)
 
-      message.channel.send("☑تفقد الخاص")
+      message.channel.send("&spm")
 
   }
 
