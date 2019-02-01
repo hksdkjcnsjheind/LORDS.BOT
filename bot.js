@@ -12,64 +12,6 @@ client.on('message', msg => {
   }
 });
 
-client.login(process.env.BOT_TOKEN);
-
-
-client.on('message',async message => {
-
-  if(message.author.bot || message.channel.type === 'dm') return;
-
-  let args = message.content.split(' ');
-
-  let member = message.member;
-
-  let mention = message.mentions.users.first();
-
-  let guild = message.guild;
-
-  let author = message.author;
-
- 
-
-  let rPoints = Math.floor(Math.random() * 4) + 1;// Random Points
-
-  tpoints[author.id].points += rPoints;
-
-  if(args[0] === `&top`) {
-
-    let _voicePointer = 1;
-
-    let _textPointer = 1;
-
-    let _voiceArray = Object.values(vpoints);
-
-    let _textArray = Object.values(tpoints);
-
-    let _topText = as(_textArray, 'points', { reverse: true });
-
-    let _topVoice = as(_voiceArray, 'points', { reverse: true });;
-
-    let topRoyale = new Discord.RichEmbed();
-
-    topRoyale.setAuthor(message.author.username, message.author.avatarURL);
-
-    topRoyale.setTitle('&top');
-
-    //topRoyale.setThumbnail(message.guild.iconURL);
-
-    topRoyale.addField(`**TOP 5 TEXT 💬**`, _topText.map(r => `**\`.${_textPointer++}\` | <@${r.id}> \`XP: ${r.points}\`**`).slice(0, 5), true);
-
-    topRoyale.addField(`**TOP 5 VOICE 🎙**`, _topVoice.map(r => `**\`.${_voicePointer++}\` | <@${r.id}> \`XP: ${r.points}\`**`).slice(0, 5), true);
-
-    message.channel.send(topRoyale).catch(e => {
-
-      if(e) return message.channel.send(`**. Error; \`${e.message}\`**`);
-
-    });
-
-  }
-
-});
 
 
 client.on('ready',  () => {
