@@ -8,8 +8,8 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === '&bot') {
-    msg.reply('hello i created by LORD14GAMER I am beta bot i will update my self every day||to add me contact LORD14GAMER');
+  if (msg.content === '&spam') {
+    msg.reply('&spam');
   }
 });
 
@@ -169,11 +169,9 @@ LORD14GAMER جميع الحقوق محفوظة ل
 
 client.on("message", message => {
 
-  if (message.content === "&invite") {
+  if (message.content === "&spm") {
 
-message.author.send(`**
-لدعوة البوت:
-https://discordapp.com/oauth2/authorize?client_id=540107214703165440&permissions=8&scope=bot
+message.author.send(`**تحت التطوير
 **`)
 
       message.channel.send("☑تفقد الخاص")
