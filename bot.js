@@ -212,3 +212,26 @@ message.author.send(`**
 
 
 
+client.on('message', message => {
+
+    var prefix = '&'
+
+    if (message.content.startsWith(prefix + "uptime")) {
+
+    message.channel.send({
+
+        embed: new Discord.RichEmbed()
+
+            .addField('Uptime', timeCon(process.uptime()), true)
+
+            .addField('RAM Usage', `${(process.memoryUsage().rss / 1048576).toFixed()}MB`, true)
+
+            .addField('Guild Count', client.guilds.size, true)
+
+    })
+
+}
+
+});
+
+client.login(process.env.BOT_TOKEN);
