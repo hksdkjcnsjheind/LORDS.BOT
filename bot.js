@@ -703,5 +703,3 @@ client.on('guildCreate', guild => {
          .setFooter('Devilbot' , client.user.avatarURL)
 
            client.channels.get("540813528517443594").send({embed}); //Sup
-
- }
