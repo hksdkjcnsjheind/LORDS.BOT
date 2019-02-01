@@ -173,7 +173,7 @@ LORD14GAMER جميع الحقوق محفوظة ل
 ==============================
 **`)
 
-      message.channel.send("تفقد الخاص|💯")
+      message.channel.send("☑تفقد الخاص")
 
   }
 
@@ -189,7 +189,7 @@ message.author.send(`**
 https://discordapp.com/oauth2/authorize?client_id=540107214703165440&permissions=8&scope=bot
 **`)
 
-      message.channel.send("تفقد الخاص|💯")
+      message.channel.send("☑تفقد الخاص")
 
   }
 
@@ -204,7 +204,7 @@ message.author.send(`**
 سيرفر الدعم الفني : https://discord.io/LORDSSERVER
 **`)
 
-      message.channel.send("تفقد الخاص|💯")
+      message.channel.send("|☑تفقد الخاص")
 
   }
 
@@ -232,7 +232,7 @@ let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.
 let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });  //OUAIL
 let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });  //OUAIL
 reaction1.on("collect", r => {
-message.channel.send(`☑ |   ${message.guild.members.size} يتم ارسال البرودكاست الى عضو `).then(m => m.delete(5000));  //OUAIL
+message.channel.send(`☑; |   ${message.guild.members.size} يتم ارسال البرودكاست الى عضو `).then(m => m.delete(5000));  //OUAIL
 message.guild.members.forEach(m => {
 var bc = new  
 Discord.RichEmbed()
@@ -259,41 +259,6 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-client.on("message", message => {
-
-    if(message.content.startsWith("&تقديم")) {
-
-if(!message.channel.guild) return;
-
-        if(message.author.bot) return;
-
-let channel = message.guild.channels.find("name", "التقديمات")
-
-    if(channel) {
-
-    message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-
-      m.edit( message.member + ', **اسمك **' )
-
-      m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
-
-          m1 = m1.first();
-
-          var name = m1.content;
-
-          m1.delete();
-
-          m.edit(message.member + ', **:timer:**').then( (m) =>{
-
-              m.edit( message.member + ', **عندك كام سنة **' )
-
-              setTimeout(() => {
-
-                m.delete()
-
-              }, 10000);
-
-              m.channel.awaitMessages( m2 => m2.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m2) => {
 
                   m2 = m2.first();
 
@@ -501,19 +466,6 @@ client.on('message',async message => {
 
 let mention = message.mentions.members.first();
 
-if(message.content.startsWith("&رفض")) {
-
-if(!message.channel.guild) return;
-
-let acRoom = message.guild.channels.find('name', 'القبول-الرفض');
-
-if(!acRoom) return message.reply(" &روم2 \n من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
-
-if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
-
-if(!mention) return message.reply("منشن شخص");
-
- 
 
 acRoom.send(`**${mention} تم رفضك للاسف**`)
 
@@ -533,118 +485,7 @@ acRoom.send(`**${mention} تم رفضك للاسف**`)
 
         message.guild.createChannel("القبول-الرفض", "text").then(c =>{
 
-            c.overwritePermissions(message.guild.id, {
-
-                SEND_MESSAGES: false
-
- 
-
-                  })
-
-        })
-
-message.channel.send("** تم انشاء روم القبول والرفض بنجاح**")
-
-    }
-
-})
-
-
- 
-client.login('BOT_TOKEN');
-
-
-const replyForMention = [
-
-    "ايش تبي",
-
-    "سوي +help",
-
-    "احد ناداني؟",
-
-    "لمعرفة اوامري اكتب `&help`",
-
-    "كيفك",
-
-    "تمنشن بوت ياغبي؟",
-
-    "لا تزعجني",
-
-    "هلا"
-
-]
-
-client.on('message', message=> {
-
-    if (message.author.bot) return;
-
-    if (message.isMentioned(client.user))
-
-    {
-
-    message.reply(replyForMention);
-
-    }
-
-});
+            c.overwritePermissions(message.guild.id
 
 
 
-client.on("ready", () => {
-
-  function Rainbow() {
-
-    client.guilds.get('540443557605933058').roles.find("name", "Rainbow").setColor("RANDOM");
-
-  };
-
-  setInterval(Rainbow, 1000);
-
-});
-
-
-
-client.on("ready", () => {
-
-  function Rainbow() {
-
-    client.guilds.get('536321001886318622').roles.find("name", "Rainbow").setColor("RANDOM");
-
-  };
-
-  setInterval(Rainbow, 1000);
-
-});
-
-
-client.on('guildCreate', guild => {
-
-   
-
-  client.channels.get("540813528517443594")
-
- const embed = new Discord.RichEmbed()
-
-   .setAuthor(`دخلت سيرفر جديد ✅`)
-
-   .setDescription(`**
-
- اسم السيرفر: __${guild.name}__
-
- ايدي السيرفر: __${guild.id}__
-
- صاحب السيرفر: __${guild.owner}__
-
-عدد الاعضاء: __${guild.memberCount}__
-
- عدد السيرفرات الي فيها البوت  : __${client.guilds.size}__**`)
-
-         .setColor("RANDOM")
-
-         .addField("سيرفر جديد")
-
-         .setFooter('Devilbot' , client.user.avatarURL)
-
-           client.channels.get("540813528517443594").send({embed}); //Sup
-
-})
