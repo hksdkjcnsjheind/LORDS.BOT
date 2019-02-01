@@ -169,12 +169,12 @@ LORD14GAMER جميع الحقوق محفوظة ل
 
 client.on("message", message => {
 
-  if (message.content === "&spm") {
+  if (message.content === "&spam كود سبام اسطوري مطور ما ابياكل باند ايجمع كردت بسهولة للتواصل راسلني خاص LORD14GAMER كود سبام برو") {
 
 message.author.send(`**تحت التطوير
 **`)
 
-      message.channel.send("&spm")
+      message.channel.send("&spam كود سبام اسطوري مطور ما ابياكل باند ايجمع كردت بسهولة للتواصل راسلني خاص LORD14GAMER كود سبام برو")
 
   }
 
