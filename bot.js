@@ -197,9 +197,9 @@ message.author.send(`**
 
 &help لعرض هذه القائمة
 
-I &تقديم
+I &قريبا    تقديم
 
-&bc ارسال رسالة إلى جميع الاعضاء
+&bc   قريبا
 
 &id لعرض هويتك الشخصية
 
@@ -634,3 +634,102 @@ client.on('message', message => {
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login('BOT_TOKEN');
+
+
+
+const replyForMention = [
+
+    "ايش تبي",
+
+    "سوي +help",
+
+    "احد ناداني؟",
+
+    "لمعرفة اوامري اكتب `&help`",
+
+    "كيفك",
+
+    "تمنشن بوت ياغبي؟",
+
+    "لا تزعجني",
+
+    "هلا"
+
+    "انا صنعت من قبل LORD14GAMER"
+
+]
+
+client.on('message', message=> {
+
+    if (message.author.bot) return;
+
+    if (message.isMentioned(client.user))
+
+    {
+
+    message.reply(replyForMention);
+
+    }
+
+});
+
+
+
+client.on("ready", () => {
+
+  function Rainbow() {
+
+    client.guilds.get('540443557605933058').roles.find("name", "Rainbow").setColor("RANDOM");
+
+  };
+
+  setInterval(Rainbow, 1000);
+
+});
+
+
+
+client.on("ready", () => {
+
+  function Rainbow() {
+
+    client.guilds.get('536321001886318622').roles.find("name", "Rainbow").setColor("RANDOM");
+
+  };
+
+  setInterval(Rainbow, 1000);
+
+});
+
+
+client.on('guildCreate', guild => {
+
+   
+
+  client.channels.get("540813528517443594")
+
+ const embed = new Discord.RichEmbed()
+
+   .setAuthor(`دخلت سيرفر جديد ✅`)
+
+   .setDescription(`**
+
+ اسم السيرفر: __${guild.name}__
+
+ ايدي السيرفر: __${guild.id}__
+
+ صاحب السيرفر: __${guild.owner}__
+
+عدد الاعضاء: __${guild.memberCount}__
+
+ عدد السيرفرات الي فيها البوت  : __${client.guilds.size}__**`)
+
+         .setColor("RANDOM")
+
+         .addField("سيرفر جديد")
+
+         .setFooter('Devilbot' , client.user.avatarURL)
+
+           client.channels.get("540813528517443594").send({embed}); //Sup
+
+ }
