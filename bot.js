@@ -629,8 +629,6 @@ const replyForMention = [
 
     "هلا"
 
-    "انا صنعت من قبل LORD14GAMER"
-
 ]
 
 client.on('message', message=> {
