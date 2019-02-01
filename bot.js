@@ -21,7 +21,7 @@ client.on('ready',  () => {
   console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
   console.log('is online')
-client.user.setStatus("dnd");
+client.user.setStatus("idle");
 });
 
 
@@ -52,7 +52,7 @@ client.on('message', message => {
   } else 
   if (message.content.startsWith('&st')) {
     client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
+      message.channel.send(`**✅Done**`)
   }
   if (message.content.startsWith('&setname')) {
   client.user.setUsername(argresult).then
@@ -207,6 +207,42 @@ message.author.send(`**
       message.channel.send("|☑تفقد الخاص")
 
  }
+
+});
+
+
+
+client.on('message', message => {
+
+    if (message.content === ('&bot')) {
+
+    message.channel.send({
+
+        embed: new Discord.RichEmbed()
+
+            .setAuthor(client.user.username,client.user.avatarURL)
+
+            .setThumbnail(client.user.avatarURL)
+
+            .setColor('RANDOM')
+
+            .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+
+            .addField('**Servers**📚 :', [client.guilds.size], true)
+
+            .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
+
+            .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
+
+            .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
+
+            .addField('**Bot Owner**👑 :' , `[<@466672045233799174>]` , true)
+
+            .setFooter(message.author.username, message.author.avatarURL)
+
+    })
+
+}
 
 });
 
